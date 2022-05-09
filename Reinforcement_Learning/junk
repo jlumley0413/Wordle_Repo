@@ -1,0 +1,15 @@
+import numpy as np
+import pandas as pd
+
+five_letter_list = ['apple', 'banana', 'orange', 'grape']
+remaining_Q_words = pd.DataFrame(np.zeros((len(five_letter_list),2)), columns=["100%","40-99%"], index=five_letter_list)
+
+remaining_words = list(remaining_Q_words.index.values)
+remaining_words.remove("banana")
+
+print(remaining_Q_words)
+print(remaining_words)
+
+#print(remaining_Q_words[remaining_Q_words.index.isin([remaining_words])])
+eliminated = remaining_Q_words.drop[remaining_words]
+print(eliminated)
