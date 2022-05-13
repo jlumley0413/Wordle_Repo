@@ -1,8 +1,8 @@
 import numpy as np
 
-def Read_Q_table(percent_remaining, remaining_Q_words):
+def Read_Q_table(percent_remaining, remaining_Q_words,correct_word):
     guess = []
-    print("Made it to Read_Q_table")
+    #print("Made it to Read_Q_table")
     if percent_remaining == 1:
         Q_column_index = "100%"
     elif percent_remaining >= 0.4:
@@ -18,6 +18,10 @@ def Read_Q_table(percent_remaining, remaining_Q_words):
     else:
         Q_column_index = "<0.25%"
 
-    guess = remaining_Q_words.idxmax()[Q_column_index]
+    try:
+        guess = remaining_Q_words.idxmax()[Q_column_index]
+    except ValueError:
+        print(remaining_Q_words)
+        print(correct_word)
 
     return guess

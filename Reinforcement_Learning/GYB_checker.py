@@ -1,12 +1,12 @@
 def GYB_checker(guess, correct_word, possible_word_list):
     #Comparing word to guess word
 
-    nonGreen_list = [0, 1, 2]
+    nonGreen_list = [0, 1, 2, 3, 4]
     Nongray_list = []
     colors = ['-','-','-','-','-'] #used to store the colors of the guessed word
     
     #Removing words where greens don't align
-    for i in range(3):
+    for i in range(5):
         word_removal_list = []
         if guess[i] == correct_word[i]:
             nonGreen_list.remove(i)
